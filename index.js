@@ -1,16 +1,16 @@
 var quotes = {
-  '': 'QUOTE_STYLE_NONE',
-  '\'': 'QUOTE_STYLE_SINGLE',
-  '"': 'QUOTE_STYLE_DOUBLE'
+  '': 'QUOTE_NONE',
+  '\'': 'QUOTE_SINGLE',
+  '"': 'QUOTE_DOUBLE'
 };
 
-var rUrl = /__relative___(QUOTE_STYLE_(?:NONE|SINGLE|DOUBLE))-(.*?)___/g;
+var rUrl = /"__relative___(QUOTE_(?:NONE|SINGLE|DOUBLE))-(.*?)___"/g;
 var path = require('path');
 var rFile = /\.[^\.]+$/;
 
 function wrap(value) {
   var info = fis.util.stringQuote(value);
-  return '__relative___' + quotes[info.quote] + '-' + info.rest + '___';
+  return '"__relative___' + quotes[info.quote] + '-' + info.rest + '___"';
 }
 
 function getRelativeUrl(file, host) {
