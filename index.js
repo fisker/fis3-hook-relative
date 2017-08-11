@@ -9,7 +9,7 @@ var path = require('path');
 var rFile = /\.[^\.]+$/;
 
 function wrap(value) {
-  var info = fis.project.lookup(value);
+  var info = fis.util.stringQuote(value);
   return '__relative___' + quotes[info.quote] + '-' + info.rest + '___';
 }
 
