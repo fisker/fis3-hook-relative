@@ -1,10 +1,16 @@
+var quote = {
+  '': 'QUOTE_STYLE_NONE',
+  '\'': 'QUOTE_STYLE_SINGLE',
+  '"': 'QUOTE_STYLE_DOUBLE'
+};
 
-var rUrl = /__relative<<<([\s\S]*?)>>>/g;
+var rUrl = /__relative___(QUOTE_STYLE_(?:NONE|SINGLE|DOUBLE))-(.*?)___/g;
 var path = require('path');
 var rFile = /\.[^\.]+$/;
 
 function wrap(value) {
-  return '__relative<<<' + value + '>>>';
+  var info = fis.project.lookup(value);
+  return '__relative---' + quote[info.quote] + '-' + info.rest + '---';
 }
 
 function getRelativeUrl(file, host) {
@@ -30,7 +36,7 @@ function getRelativeUrl(file, host) {
 }
 
 function convert(content, file, host) {
-  return content.replace(rUrl, function(all, value) {
+  return content.replace(rUrl, function(all, quoteStyle, value) {
     var info = fis.project.lookup(value);
 
     if (!info.file) {
@@ -52,7 +58,14 @@ function convert(content, file, host) {
       url += query;
     }
 
-    return info.quote + url + hash + info.quote;
+    var quoteChr = '';
+    for(var chr in quote) {
+      if (quote[chr] === quoteStyle) {
+        quoteChr = chr;
+      }
+    }
+
+    return quoteChr + url + hash + quoteChr;
   });
 }
 

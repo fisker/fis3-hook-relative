@@ -1,6 +1,6 @@
 {
-  "name": "fis3-hook-relative",
-  "version": "2.0.0",
+  "name": "fis3-hook-relative-legal-html",
+  "version": "1.0.0",
   "description": "fis3 relative path support",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fex-team/fis3-hook-relative.git"
+    "url": "https://github.com/fisker/fis3-hook-relative-legal-html.git"
   },
   "keywords": [
     "fis3",
@@ -17,7 +17,7 @@
   "author": "fis",
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/fex-team/fis3-hook-relative/issues"
+    "url": "https://github.com/fisker/fis3-hook-relative-legal-html/issues"
   },
-  "homepage": "https://github.com/fex-team/fis3-hook-relative"
+  "homepage": "https://github.com/fisker/fis3-hook-relative-legal-html"
 }

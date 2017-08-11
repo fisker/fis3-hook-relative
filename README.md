@@ -1,4 +1,4 @@
-# fis3-hook-relative
+# fis3-hook-relative-legal-html
 让 fis3 产出能够支持相对路径。
 
 ## 如何使用？
@@ -8,20 +8,20 @@
 全局安装
 
 ```
-npm install -g fis3-hook-relative
+npm install -g fis3-hook-relative-legal-html
 ```
 
 或者，局部安装
 
 ```
-npm install fis3-hook-relative
+npm install fis3-hook-relative-legal-html
 ```
 
 ### 2. 配置启动
 
 ```javascript
 // 启用插件
-fis.hook('relative');
+fis.hook('relative-legal-html');
 
 // 让所有文件，都使用相对路径。
 fis.match('**', {
@@ -60,3 +60,7 @@ console.log(message.ret);
 ```
 
 因为其他插件与该插件是非耦合的，所以是通过发送事件的方式询问，如果起了该插件，那么监听此事件来处理相对路径。
+
+### 修复问题
+fex-team/fis3-hook-relative 中间过程会生成类似 
+`src=__relative___<<<'some/file.ext'>>>`的代码 导致postprocess等插件在处理文件的时候可能出错
