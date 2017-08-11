@@ -62,6 +62,7 @@ function convert(content, file, host) {
     for(var chr in quotes) {
       if (quote[chr] === quoteStyle) {
         quoteChr = chr;
+        break;
       }
     }
 
