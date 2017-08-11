@@ -1,4 +1,4 @@
-var quote = {
+var quotes = {
   '': 'QUOTE_STYLE_NONE',
   '\'': 'QUOTE_STYLE_SINGLE',
   '"': 'QUOTE_STYLE_DOUBLE'
@@ -10,7 +10,7 @@ var rFile = /\.[^\.]+$/;
 
 function wrap(value) {
   var info = fis.project.lookup(value);
-  return '__relative---' + quote[info.quote] + '-' + info.rest + '---';
+  return '__relative___' + quotes[info.quote] + '-' + info.rest + '___';
 }
 
 function getRelativeUrl(file, host) {
@@ -59,7 +59,7 @@ function convert(content, file, host) {
     }
 
     var quoteChr = '';
-    for(var chr in quote) {
+    for(var chr in quotes) {
       if (quote[chr] === quoteStyle) {
         quoteChr = chr;
       }
