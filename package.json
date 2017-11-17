@@ -2,10 +2,6 @@
   "name": "fis3-hook-relative-legal-html",
   "version": "1.0.5",
   "description": "fis3 relative path support",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/fisker/fis3-hook-relative-legal-html.git"
@@ -19,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/fisker/fis3-hook-relative-legal-html/issues"
   },
-  "homepage": "https://github.com/fisker/fis3-hook-relative-legal-html"
+  "homepage": "https://github.com/fisker/fis3-hook-relative-legal-html",
+  "readmeFilename": "README.md",
+  "scripts": {
+    "release": "npm --registry=https://registry.npmjs.org/ publish"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js"
+  ]
 }
